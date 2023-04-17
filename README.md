@@ -1,3 +1,2 @@
 # projectTech
-Project tech assignments 
-Dit is een test
+Project tech assignments  - Please werk
