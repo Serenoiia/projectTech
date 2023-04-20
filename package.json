@@ -4,12 +4,15 @@
   "description": "CMD projectTech node package file",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compressTest": "{{ run command to compress files }}"
   },
   "repository": {
     "type": "git",
     "url": "projectTech"
   },
   "author": "Jeannet Welboren",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
