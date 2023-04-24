@@ -1,2 +1,2 @@
 # projectTech
-Project tech assignments  - Please werk
+Project tech assignments  - Dev branche doet het, yayyy :)
