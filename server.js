@@ -1,10 +1,13 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+
 const app = express()
 
 app.get('/', onhome)
 app.get('/about', onabout)
 app.listen(3000)
 
+app.set('view engine', 'ejs')
 app.use(express.static('assets'))
 
 // 404 error if page is not found
@@ -22,6 +25,7 @@ function onabout (req, res) {
 }
 
 
+
 // Voorbeeld van static mapje inladen
 // app.use(express.static('naam mapje'))
 
@@ -29,13 +33,3 @@ function onabout (req, res) {
 // app.get('/',(req, res) => {
 //   res.send('<h1>voorbeeld van de arrow function</h1>')
 // });
-
-
-// Les 1 manier
-// app.get('/', (req, res) => {
-//   res.send('Hiiihiii!')
-// })
-
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
