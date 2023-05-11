@@ -1,0 +1,48 @@
+<%- include('header') %>
+
+<body>
+  <main id="container">
+    <!-- Profiel aanmaken -->
+    <section>
+      <img src="static/profiel-aanmaken.jpg" />
+      <form action="/select-artists" method="post">
+        <h1>Profiel aanmaken</h1>
+
+        <p>
+          Maak hier je profiel aan want hier staat text en ik heb geen idee
+          wat ik moet neerzetten
+        </p>
+
+        <div>
+          <label for="name">Gebruikersnaam</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Gebruikersnaam"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="age">leeftijd </label>
+          <input type="date" id="age" name="age" required />
+        </label>
+        </div>
+        
+        <div>
+          <label for="email">Email  </label>
+          <input
+            type="email"
+            id="emial"
+            name="email"
+            placeholder="mail@mail.com"
+            required
+          />
+        </div>
+          <input type="submit" value="Next" />
+      </form>
+    </section>
+  </main>
+</body>
+</html>

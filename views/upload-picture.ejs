@@ -1,0 +1,30 @@
+<%- include('header') %>
+
+<body>
+  <main>
+    <!-- Profiel foto -->
+    <section id="profilePicture">
+    <form>
+      <h1>Profiel foto</h1>
+      <p>Maak je profiel leuker door een profiel foto.</p>
+      <label for="upload-image">
+        <input type="file" id="upload-image" accept="image/png, image/jpeg" onclick="this.value=null;" style="display: none;">
+        <img src="" alt="">
+    </label>
+      <input type="submit" value="Next" />
+    </form>
+    </section>
+  </main>
+</body>
+<script>
+  /* Image upload */
+  const fileInput = document.querySelector("#upload-image");
+    fileInput.addEventListener("change", () => {
+        const file = fileInput.files[0];
+        if(file){
+            document.querySelector("img").src = URL.createObjectURL(file);
+        }
+    });
+</script>
+
+</html>
