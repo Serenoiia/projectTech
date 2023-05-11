@@ -105,9 +105,17 @@ li{
 
 #profilePicture form label{
     background-color: var(--light);
-    height: 70vw;
-    width: 70vw;
+    height: 80vw;
+    width: 80vw;
     margin: auto;
     margin-top: 30px;
     border-radius: 5px;;
+    object-fit: cover;
+}
+
+#profilePicture img{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    object-fit: cover;
 }
