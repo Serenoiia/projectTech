@@ -13,7 +13,7 @@ app.get('/',(req, res) => {
   res.send('<h1>Hiiihiii!</h1>')
 })
 // Make new profile page
-app.get('/newProfile',(req, res) => {
+app.get('/new-profile',(req, res) => {
   res.render('make-profile.ejs');
 })
 // Select the band/artist page
@@ -25,7 +25,7 @@ app.get('/upload-picture',(req, res) => {
   res.render('upload-picture.ejs');
 })
 // Fill in about info
-app.get('/newAbout',(req, res) => {
+app.post('/new-about',(req, res) => {
   res.render('make-about.ejs');
 })
 // 404 error if page is not found

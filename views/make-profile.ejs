@@ -4,38 +4,39 @@
 <body>
   <main id="container">
     <section>
+      <span>1/4</span>
       <img src="static/profiel-aanmaken.jpg" />
       <form action="/select-artists" method="post">
-        <h1>Profiel aanmaken</h1>
+        <h1>Create Profile</h1>
 
+        <p>Welcome at Concert Buddies!</p>
         <p>
-          Maak hier je profiel aan want hier staat text en ik heb geen idee wat
-          ik moet neerzetten
+          Create your profile and find other people with amazing music taste
         </p>
 
         <div>
-          <label for="name">Gebruikersnaam</label>
+          <label for="name">Username</label>
           <input
             type="text"
             id="name"
             name="name"
-            placeholder="Gebruikersnaam"
+            placeholder="Username"
             required
           />
         </div>
 
         <div>
-          <label for="age">leeftijd </label>
+          <label for="age">Age </label>
           <input type="date" id="age" name="age" required />
         </div>
 
         <div>
-          <label for="email">Email </label>
+          <label for="phone">Number </label>
           <input
-            type="email"
-            id="emial"
-            name="email"
-            placeholder="mail@mail.com"
+            type="tel"
+            id="phone"
+            name="tel"
+            placeholder="0612345678"
             required
           />
         </div>
