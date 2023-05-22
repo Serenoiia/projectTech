@@ -111,10 +111,14 @@ ul{
 li{
     list-style-type: none;
     background-color: var(--active);
-    padding: 15px 5px;
-    text-align: center;
     border-radius: 5px;
-    color: var(--input)
+    padding: 15px 5px;
+    color: var(--input);
+    height: 2.5em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Upload Profile picture page */

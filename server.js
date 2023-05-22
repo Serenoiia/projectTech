@@ -28,6 +28,10 @@ app.get('/upload-picture',(req, res) => {
 app.post('/new-about',(req, res) => {
   res.render('make-about.ejs');
 })
+// User profile
+app.post('/profile',(req, res) => {
+  res.render('profile.ejs');
+})
 // 404 error if page is not found
 app.use((req, res, next) => {
   res.status(404).send(
