@@ -2,11 +2,29 @@
 
 <body>
   <main>
-    <!-- Bands / artiesten -->
+    <!-- Bands / artists -->
     <section>
-      <h1>Bands / artiesten</h1>
-      <p>Selecteer je favoriete artiesten</p>
-      <%- include('artists') %>
+      <h1>Bands / artists</h1>
+      <p>Select your favorite artists</p>
+<!-- 
+      <form method="post" action="/search">
+        <input type="text" name="query" placeholder="search artists" />
+        <button type="submit">Search</button>
+      </form> -->
+    
+      <% if (items && items.length > 0) { %>
+        <ul>
+          <% items.forEach(item => { %>
+            <li>
+              <img src="<%= item.image %>" alt="<%= item.name %>">
+              <p><%= item.name %></p>
+            </li>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>No results found</p>
+      <% } %>
+      
       <a href="/upload-picture">Next</a>
     </section>
   </main>
