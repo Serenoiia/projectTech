@@ -2,9 +2,9 @@
 Ben je opzoek naar mensen waarmee je naar een concert kan die een geweldige muziek smaak hebben. Dan is concert buddies helemaal iets voor jou. Met deze applicatie kan je mensen vinden die naar de zelfde artiesten en bands luisteren zoals jij. 
 
 ## Feature
-Mijn gekozen feature is het aanmaken van een profiel. Dus niet een account maar echt het gedeelte waar de gebruiker algemene informatie in vult over zichzelf. Hierdoor kunnen de leden gematched worden op muziek smaak en qua leeftijd. Hier komen onderdelen zoals naar welke artiesten ze luisteren, profiel foto, about me, naam, email en hun leeftijd.
+Mijn Feature bestaat uit de eerste paar paginas van het aanmaken van een profiel. Hierbij geet de gebruiker zijn gebruikersnaam, leeftijd, nummer, artiesten waar die naar luisterd, profiel foto en een about me. Vnuit deze informatie kan een profiel worden opgezet. 
 
-Deze feature ga ik realiseren met html, css, javascript en ............
+
 
 ## Tech
 1. Html
