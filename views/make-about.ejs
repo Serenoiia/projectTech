@@ -8,16 +8,20 @@
       <h1>About me</h1>
       <p>Let other people know who you are and what you like</p>
 
-      <label for="about">About me</label>
-      <textarea
-        id="about"
-        name="about"
-        rows="15"
-        cols="33"
-        placeholder="Something about me"
-      ></textarea>
-
-      <a href="/profile">Create Profile</a>
+      <form action="/profile" method="post">
+        <fieldset>
+          <legend>Fill in the about me below</legend>
+          <label for="about">About me</label>
+          <textarea
+            id="about"
+            name="about"
+            rows="15"
+            cols="33"
+            placeholder="Something about me"
+          ></textarea>
+          <input type="submit" value="Next" />
+        </fieldset>
+      </form>
     </section>
   </main>
 </body>

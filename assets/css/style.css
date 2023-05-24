@@ -23,7 +23,6 @@ section {
     margin: 30px 20px 20px;
     display: flex;
     flex-direction: column;
-    width: 90vw;
 }
 
 h1{
@@ -82,16 +81,22 @@ input[type=submit], a{
     display: grid;
     margin-left: auto;
     margin-top: 30px;
-    font-family: 'Unbounded', cursive;
     text-decoration: none;
     text-align: center;
-    border: none;
     border-radius: .45rem;
     background-color: var(--main);
     color: white;
     width: 130px;
     padding: 15px 0; 
 }
+
+fieldset {
+    border: none;
+  }
+
+  legend {
+    visibility: hidden;
+  }
 
 
 /* Code for pSelect artists/bands page */
@@ -102,6 +107,7 @@ ul{
     margin-top: 20px;
     max-height: 500px;
     overflow: scroll;
+    scroll-behavior: smooth;
 }
 
 li{

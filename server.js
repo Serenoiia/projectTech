@@ -1,7 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 
-
 const app = express()
 
 app.set('view engine', 'ejs')
@@ -35,7 +34,7 @@ app.post('/new-about',(req, res) => {
 })
 
 // User profile
-app.get('/profile',(req, res) => {
+app.post('/profile',(req, res) => {
   res.render('profile.ejs');
 })
 
@@ -52,7 +51,7 @@ const artists = [
   {id:3, name: 'Arctic monkeys', image: '/static/arcticmonkeys.jpg'},
   {id:4, name: 'Kovacs', image: '/static/kovacs.jpg'},
   {id:5, name: 'Melanie Martinez', image: '/static/melaniemartinez.jpg'},
-  {id:6, name: 'BMTH', image: '/static/bmth.jpg'},
+  {id:6, name: 'Bring me the horizon', image: '/static/bmth.jpg'},
   {id:7, name: 'Doja Cat', image: '/static/dojacat.jpg'},
   {id:8, name: 'Grandson', image: '/static/grandson.jpg'},
   {id:9, name: 'Ashnikko', image: '/static/ashnikko.jpg'},
