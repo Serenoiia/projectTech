@@ -7,8 +7,8 @@ Mijn Feature bestaat uit de eerste paar paginas van het aanmaken van een profiel
 
 
 ## Tech
-1. Html
-2. css
+1. HTML
+2. CSS
 3. JavaScript
 4. EJS
 5. Node.js
