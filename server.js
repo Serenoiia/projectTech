@@ -13,10 +13,12 @@ app.listen(3000)
 app.get('/',(req, res) => {
   res.send('<h1>Hiiihiii!</h1>')
 })
+
 // Make new profile page
 app.get('/new-profile',(req, res) => {
   res.render('make-profile.ejs');
 })
+
 // Select the band/artist page
 app.post('/select-artists',(req, res) => {
   res.render('select-artists.ejs',{ items: artists });
@@ -26,14 +28,17 @@ app.post('/select-artists',(req, res) => {
 app.get('/upload-picture',(req, res) => {
   res.render('upload-picture.ejs');
 })
+
 // Fill in about info
 app.post('/new-about',(req, res) => {
   res.render('make-about.ejs');
 })
+
 // User profile
 app.get('/profile',(req, res) => {
   res.render('profile.ejs');
 })
+
 // 404 error if page is not found
 app.use((req, res, next) => {
   res.status(404).send(
@@ -62,12 +67,5 @@ const artists = [
   {id:18, name: 'Bad omens', image: '/static/badomens.jpg'},
 ];
 
-
-// app.post('/search', (req, res) => {
-//   const query = req.body.query;
-//   // zoeklogica uit met behulp van de query-parameter
-//   const results = artists.filter(item => item.name.includes(query));
-//   res.render('select-artists', { items: results, query: query });
-// });
 
 

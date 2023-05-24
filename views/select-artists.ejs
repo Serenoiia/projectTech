@@ -3,16 +3,10 @@
 <body>
   <main>
     <!-- Bands / artists -->
-    <section>
+    <section id="artistList">
       <h1>Bands / artists</h1>
       <p>Select your favorite artists</p>
-<!-- 
-      <form method="post" action="/search">
-        <input type="text" name="query" placeholder="search artists" />
-        <button type="submit">Search</button>
-      </form> -->
     
-      <% if (items && items.length > 0) { %>
         <ul>
           <% items.forEach(item => { %>
             <li>
@@ -21,12 +15,10 @@
             </li>
           <% }); %>
         </ul>
-      <% } else { %>
-        <p>No results found</p>
-      <% } %>
       
       <a href="/upload-picture">Next</a>
     </section>
   </main>
+  <script src="js/selectartists.js"></script>
 </body>
 </html>
