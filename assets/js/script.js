@@ -1,4 +1,4 @@
-  /* Image upload */
+  /* Image upload preview */
   const fileInput = document.querySelector("#upload-image");
   fileInput.addEventListener("change", () => {
     const file = fileInput.files[0];
