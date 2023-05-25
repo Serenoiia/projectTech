@@ -159,6 +159,7 @@ li p {
 }
 
 #profilePicture img {
+    height: 100%;
     margin: 0;
     object-fit: cover;
 }
