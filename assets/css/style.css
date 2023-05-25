@@ -179,6 +179,7 @@ li p{
 
 #yourProfile img{
     width: 100px;
+    height: 100px;
     margin: auto;
     object-fit: cover;
     margin-bottom: 1em;
@@ -196,4 +197,10 @@ li p{
     margin-bottom: 1em;
     font-weight: bold;
     color: var(--main);
+}
+
+#embed-iframe {
+    display: flex;
+    gap: 1em;
+    overflow: scroll;
 }

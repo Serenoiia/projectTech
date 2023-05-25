@@ -6,6 +6,7 @@ const app = express()
 app.set('view engine', 'ejs')
 app.set('views', 'views')
 app.use(express.static('assets'))
+app.use(express.urlencoded({ extended: true }))
 app.listen(3000)
 
 // Home
@@ -41,10 +42,12 @@ app.post('/profile',(req, res) => {
     age: "22",
     username: "Serenoiia",
     bio: "Hii, I’m looking for people who want to go to sleep token with me",
+    image: '/static/serenoiia.jpg',
   };
-  
+
   res.render('profile', { profileData: profileData });
 })
+
 
 // 404 error if page is not found
 app.use((req, res, next) => {
