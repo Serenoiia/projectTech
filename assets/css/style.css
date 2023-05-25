@@ -13,7 +13,7 @@
     --accent: #C8C4D9;
 }
 
-body{
+body {
     color: var(--main);
     font-weight: 300;
     font-size: 14px;
@@ -25,41 +25,41 @@ section {
     flex-direction: column;
 }
 
-h1{
+h1 {
     font-size: 1.4em;
     font-weight: bold;
     margin-bottom: 8px;
 }
 
-p{
+p {
     color: var(--text);
     margin: 0;
 }
 
-span{
+span {
     color: var(--accent);
     font-weight: bold;
     font-size: 1.2em;
     margin-bottom: 1em;
 }
 
-span::first-letter{
+span::first-letter {
     color: var(--main);
 }
 
-img{
+img {
     border-radius: .45rem;
     margin-bottom: 25px;
 }
 
-label{
+label {
     display: flex;
     flex-direction: column;
     font-weight: bold;
     margin-top: 20px;
 }
 
-input, textarea{
+input, textarea {
     margin-top: 10px;
     padding: 1em;
     border: 2px solid var(--input);
@@ -77,7 +77,7 @@ input::placeholder {
     font-weight: 400;
 }
 
-input[type=submit], a{
+input[type=submit], a {
     display: grid;
     margin-left: auto;
     margin-top: 30px;
@@ -92,15 +92,15 @@ input[type=submit], a{
 
 fieldset {
     border: none;
-  }
+}
 
-  legend {
+legend {
     visibility: hidden;
-  }
+}
 
 
 /* Code for Select artists/bands page */
-ul{
+ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1em;
@@ -110,7 +110,7 @@ ul{
     scroll-behavior: smooth;
 }
 
-li{
+li {
     list-style-type: none;
     border-radius: .45rem;
     display: flex;
@@ -120,34 +120,34 @@ li{
     padding-bottom: 5px;
 }
 
-li img{
+li img {
     height: 5em;
     margin-right: 10px;
     margin: 0;
 }
 
 
-li p{
+li p {
     font-size: 12px;
     margin-top: 5px;
 }
 
-.selected{
+.selected {
     background-color: var(--active);
     transition: .3s;
 }
 
-.selected p{
+.selected p {
     color: var(--light)
 }
 
-.selected img{
+.selected img {
     box-sizing: border-box;
     border: 3px solid var(--active);
 }
 
 /* Code for profile picture page */
-#profilePicture form label{
+#profilePicture form label {
     background-color: var(--light);
     height: 80vw;
     width: 80vw;
@@ -157,11 +157,11 @@ li p{
     object-fit: cover;
 }
 
-#profilePicture form label input{
+#profilePicture form label input {
     display: none;
 }
 
-#profilePicture img{
+#profilePicture img {
     height: 100%;
     width: 100%;
     margin: 0;
@@ -177,7 +177,7 @@ li p{
     align-items: center;
 }
 
-#yourProfile img{
+#yourProfile img {
     width: 100px;
     height: 100px;
     margin: auto;
@@ -193,13 +193,13 @@ li p{
     border-radius: 0.45rem;
 }
 
-#yourProfile section:nth-of-type(2) p:first-of-type{
+#yourProfile section:nth-of-type(2) p:first-of-type {
     margin-bottom: 1em;
     font-weight: bold;
     color: var(--main);
 }
 
-#embed-iframe {
+#embedIframe {
     display: flex;
     gap: 1em;
     overflow: scroll;
