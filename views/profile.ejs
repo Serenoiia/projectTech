@@ -3,14 +3,14 @@
 <body>
   <main id="yourProfile">
     <section>
-      <h1>Username</h1>
-      <p>Welcome</p>
+      <h1> <%= profileData.username %> </h1>
+      <p> Welcome </p>
     </section>
 
     <section>
       <img src="static/default-picture.jpg" />
-      <P>22 years</P>
-      <P>Hii, I’m looking for people who want to go to sleep token with me</P>
+      <P> <%= profileData.age %> years </P>
+      <P> <%= profileData.bio %></P>
     </section>
 
     <section>
@@ -23,5 +23,3 @@
   <script src="https://open.spotify.com/embed-podcast/iframe-api/v1" async></script>
 </body>
 </html>
-
-<!-- if artist is selected show iframe -->

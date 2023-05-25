@@ -36,6 +36,14 @@ app.post('/new-about',(req, res) => {
 // User profile
 app.post('/profile',(req, res) => {
   res.render('profile.ejs');
+
+  const profileData = {
+    age: "22",
+    username: "Serenoiia",
+    bio: "Hii, I’m looking for people who want to go to sleep token with me",
+  };
+  
+  res.render('profile', { profileData: profileData });
 })
 
 // 404 error if page is not found

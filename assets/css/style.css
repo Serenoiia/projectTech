@@ -99,7 +99,7 @@ fieldset {
   }
 
 
-/* Code for pSelect artists/bands page */
+/* Code for Select artists/bands page */
 ul{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
