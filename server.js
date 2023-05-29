@@ -1,3 +1,33 @@
+require('dotenv').config();
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = process.env.DB_SIGNIN;
+
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    console.log("Finally it works");
+  }
+}
+
+run().catch(console.dir);
+
+const dbName = 'usersData'; 
+const collectionName = 'user';
+
 const express = require('express')
 const bodyParser = require('body-parser')
 
@@ -8,52 +38,6 @@ app.set('views', 'views')
 app.use(express.static('assets'))
 app.use(express.urlencoded({ extended: true }))
 app.listen(3000)
-
-// Home
-app.get('/',(req, res) => {
-  res.send('<h1>Hiiihiii!</h1>')
-})
-
-// Make new profile page
-app.get('/new-profile',(req, res) => {
-  res.render('make-profile.ejs');
-})
-
-// Select the band/artist page
-app.post('/select-artists',(req, res) => {
-  res.render('select-artists.ejs',{ items: artists });
-})
-
-// Upload profile picture page
-app.get('/upload-picture',(req, res) => {
-  res.render('upload-picture.ejs');
-})
-
-// Fill in about info
-app.post('/new-about',(req, res) => {
-  res.render('make-about.ejs');
-})
-
-// User profile
-app.post('/profile',(req, res) => {
-  res.render('profile.ejs');
-
-  const profileData = {
-    age: "22",
-    username: "Serenoiia",
-    bio: "Hii, I’m looking for people who want to go to sleep token with me",
-    image: '/static/serenoiia.jpg',
-  };
-
-  res.render('profile', { profileData: profileData });
-})
-
-
-// 404 error if page is not found
-app.use((req, res, next) => {
-  res.status(404).send(
-      "<h1>404 Page not found on the server</h1>")
-})
 
 // Array with data from artist and bands 
 const artists = [
@@ -76,6 +60,94 @@ const artists = [
   {id:17, name: 'Maneskin', image: '/static/maneskin.jpg'},
   {id:18, name: 'Bad omens', image: '/static/badomens.jpg'},
 ];
+
+// Make new profile page
+app.get('/new-profile',(req, res) => {
+  res.render('make-profile.ejs', { username: '', age: '', tel: '' });
+})
+
+// Upload profile picture page
+app.post('/upload-picture',(req, res) => {
+  const { username, age, tel, file } = req.body;
+  res.render('upload-picture.ejs', { username, age, tel, file });
+})
+
+// Fill in about info
+app.post('/new-about', (req, res) => {
+  const { username, age, tel, file, about } = req.body;
+  res.render('make-about.ejs', { username, age, tel, file, about });
+});
+
+// Select the band/artist page
+app.post('/select-artists', async (req, res) => {
+  const { username, age, tel, file, about } = req.body;
+
+  const userData = {
+    username: username,
+    age: age,
+    tel: tel,
+    file: file,
+    about: about,
+  };
+
+  try {
+    await client.connect();
+
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
+
+    await collection.insertOne(userData);
+
+    console.log('Gebruikersgegevens succesvol opgeslagen in MongoDB');
+
+    res.render('select-artists.ejs', { items: artists, username, age, tel, file, about });
+  } catch (error) {
+    console.error('Er is een fout opgetreden bij het opslaan van de gegevens:', error);
+    res.render('error-page.ejs');
+  } finally {
+    await client.close();
+  }
+})
+
+
+// User profile
+app.get('/profile', async (req, res) => {
+  try {
+    await client.connect();
+
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
+
+    const userData = await collection.findOne({}); // Haal de gegevens op, je moet mogelijk een query specificeren
+
+    if (userData) {
+      const profileData = {
+        username: userData.username,
+        age: userData.age,
+        file: userData.file,
+        about: userData.about
+      };
+
+      res.render('profile', { profileData: profileData });
+    } else {
+      // Geen gegevens gevonden, handel dit op de gewenste manier af
+      res.render('profile', { profileData: null });
+    }
+  } catch (error) {
+    console.error('Er is een fout opgetreden bij het ophalen van de gegevens:', error);
+    res.render('error-page.ejs');
+  } finally {
+    await client.close();
+  }
+});
+
+// 404 error if page is not found
+app.use((req, res, next) => {
+  res.status(404).send(
+      "<h1>404 Page not found on the server</h1>")
+})
+
+
 
 
 
