@@ -204,3 +204,23 @@ li p {
     gap: 1em;
     overflow: scroll;
 }
+
+/* Code for Error page */
+
+#error h1{
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#error p {
+    text-align: center;
+}
+
+#error section {
+    display: flex;
+    justify-content :center;
+    align-items:center;
+    min-height: 100vh;
+    margin: 0;
+}
