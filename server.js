@@ -98,11 +98,11 @@ app.post('/select-artists', async (req, res) => {
 
     await collection.insertOne(userData);
 
-    console.log('Gebruikersgegevens succesvol opgeslagen in MongoDB');
+    console.log('User data successfully saved in MongoDB');
 
     res.render('select-artists.ejs', { items: artists, username, age, tel, file, about });
   } catch (error) {
-    console.error('Er is een fout opgetreden bij het opslaan van de gegevens:', error);
+    console.error('An error occurred while saving the data:', error);
     res.render('error-page.ejs');
   } finally {
     await client.close();
@@ -118,7 +118,7 @@ app.get('/profile', async (req, res) => {
     const db = client.db(dbName);
     const collection = db.collection(collectionName);
 
-    const userData = await collection.findOne({}); // Haal de gegevens op, je moet mogelijk een query specificeren
+    const userData = await collection.findOne({});
 
     if (userData) {
       const profileData = {
@@ -130,11 +130,10 @@ app.get('/profile', async (req, res) => {
 
       res.render('profile', { profileData: profileData });
     } else {
-      // Geen gegevens gevonden, handel dit op de gewenste manier af
       res.render('profile', { profileData: null });
     }
   } catch (error) {
-    console.error('Er is een fout opgetreden bij het ophalen van de gegevens:', error);
+    console.error('An error occurred while saving the data:', error);
     res.render('error-page.ejs');
   } finally {
     await client.close();
