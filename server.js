@@ -64,13 +64,13 @@ const artists = [
 // Make new profile page
 app.get('/new-profile',(req, res) => {
   res.render('make-profile.ejs', { username: '', age: '', tel: '' });
-})
+});
 
 // Upload profile picture page
 app.post('/upload-picture',(req, res) => {
   const { username, age, tel, file } = req.body;
   res.render('upload-picture.ejs', { username, age, tel, file });
-})
+});
 
 // Fill in about info
 app.post('/new-about', (req, res) => {
@@ -107,7 +107,7 @@ app.post('/select-artists', async (req, res) => {
   } finally {
     await client.close();
   }
-})
+});
 
 
 // User profile
@@ -143,9 +143,4 @@ app.get('/profile', async (req, res) => {
 // 404 error if page is not found
 app.use((req, res, next) => {
   res.status(404).render('error.ejs');
-})
-
-
-
-
-
+});
