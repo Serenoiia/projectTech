@@ -216,6 +216,13 @@ li p {
        object-fit: cover;
 }
 
+noscript p{
+    color: darkred;
+    font-style: italic;
+    margin-top: 1em;
+    text-align: center;
+}
+
 
 /* Code for profile page */
 #yourProfile section:nth-of-type(1) {
